@@ -1,0 +1,804 @@
+/* Login Page Specific Styling */
+body.login-page {
+    background-image: url('landmarkinmorning.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-attachment: fixed; 
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    animation: zoomBackground 2s ease; /* Hiệu ứng zoom-in cho nền */
+}
+
+/* Zoom-in Background Animation for login page */
+@keyframes zoomBackground {
+    0% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Form container for login page */
+body.login-page .form-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    max-width: 90%;
+    animation: zoomIn 0.8s ease; /* Hiệu ứng zoom-in cho form */
+}
+
+/* Zoom-in Form Animation */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 2em;
+    color: #000000;
+    font-weight: 700;
+}
+
+label {
+    font-size: 1.2em; /* Tăng kích thước font chữ để dễ đọc hơn */
+    color: #000000; /* Đổi sang màu đậm hơn để dễ nhìn trên nền */
+    margin-bottom: 10px; /* Tăng khoảng cách giữa label và input */
+    text-align: left;
+    display: block;
+    font-weight: bold; /* Bôi đậm chữ để làm nổi bật */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #007bff; /* Đổi màu viền khi focus */
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #0066cc;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng ánh sáng khi hover vào nút */
+input[type="submit"]:hover {
+    background-color: #004a99;
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.6); /* Tạo hiệu ứng ánh sáng xung quanh nút */
+    transform: scale(1.03); /* Nút sẽ to lên một chút khi hover */
+}
+
+/* Error message styling */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Responsive adjustments for login page */
+@media (max-width: 600px) {
+    body.login-page .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+
+/* Dashboard Section */
+body.dashboard-page {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient màu pastel đẹp */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1.5s ease-in-out; /* Thêm hiệu ứng fade-in cho toàn trang */
+}
+
+/* Hiệu ứng fade-in khi load trang */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    animation: slideUp 1s ease-in-out; /* Thêm hiệu ứng slide-up cho container */
+}
+
+/* Hiệu ứng slide-up khi container xuất hiện */
+@keyframes slideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Xóa dấu chấm (bullet points) */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Animation cho các nút bấm */
+a {
+    display: inline-block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Làm cho nút chiếm toàn bộ chiều rộng */
+    max-width: 300px; /* Giới hạn chiều rộng tối đa */
+}
+
+/* Thêm hiệu ứng scale và shadow khi hover vào nút */
+a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Tăng nhẹ kích thước khi hover */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đổ bóng khi hover */
+}
+
+/* Additional styling for header and function sections */
+h1 span {
+    color: #d35400; /* Màu sắc chuyên nghiệp hơn cho tên người dùng */
+}
+
+/* Adjust button spacing and layout */
+.container .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Thêm khoảng cách giữa các nút */
+}
+
+.logout {
+    margin-top: 20px;
+    background-color: #e74c3c;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+
+/* Withdraw Section */
+body.withdraw-page, body.withdraw_handler-page {
+    background-color: #f4f7fa;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #0066cc;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #004a99;
+    transform: scale(1.05);
+}
+
+/* Error Page */
+body.error-page {
+    background-color: #f8d7da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #721c24;
+    font-size: 2.5rem;
+}
+
+p {
+    color: #721c24;
+    font-size: 1.2rem;
+}
+
+.container {
+    text-align: center;
+    background-color: #f8d7da;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* admin-page */
+/* Admin Page Styling */
+body.admin-page {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Background gradient */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    animation: fadeIn 1.2s ease-in-out; /* Animation khi load trang */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container Admin Dashboard */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Sử dụng toàn bộ chiều rộng màn hình */
+    max-width: 100%; /* Loại bỏ giới hạn chiều rộng */
+    text-align: center;
+}
+
+/* Admin Dashboard Header */
+.container h1 {
+    color: #8e44ad;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.container h2 {
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Table for User List */
+table {
+    width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f7fa;
+    color: #333;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+/* Button Styling */
+td a {
+    color: white;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+td a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi hover */
+}
+
+/* Button Styling and Animation */
+.button-action {
+    background-color: #74b9ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-action:hover {
+    background-color: #0984e3;
+    transform: scale(1.05);
+}
+
+/* Styling các ô trong bảng */
+tbody td {
+    font-size: 1rem;
+}
+
+table {
+    border-spacing: 0;
+    border-radius: 10px;
+}
+
+th:first-child, td:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+th:last-child, td:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0; /* Màu nền trung tính */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #004080;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Các thiết lập bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Các thiết lập nút */
+.action-button {
+    padding: 10px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+/* Màu sắc nút theo chức năng */
+.account-button {
+    background-color: #004080;
+    color: white;
+}
+
+.account-button:hover {
+    background-color: #0073e6;
+}
+
+.transaction-button {
+    background-color: #1abc9c;
+    color: white;
+}
+
+.transaction-button:hover {
+    background-color: #16a085;
+}
+
+.withdraw-button {
+    background-color: #f39c12;
+    color: white;
+}
+
+.withdraw-button:hover {
+    background-color: #e67e22;
+}
+
+/* Nút Đăng xuất */
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 30px auto 0;
+    font-size: 16px;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Cải thiện trải nghiệm người dùng */
+.container {
+    padding: 30px;
+}
+
+/* Media Queries cho thiết kế đáp ứng */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .action-button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .logout-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+
+/* register */
+
+
+
+/*account-page */
+
+body.account-page {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+    color: #004080;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid #dcdcdc;
+    padding-bottom: 10px;
+}
+
+/* Personal Information */
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+p strong {
+    color: #004080;
+    font-weight: 600;
+}
+
+/* Account Summary */
+.account-summary {
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.account-summary p {
+    font-size: 20px;
+    color: #0056b3;
+}
+
+.account-summary strong {
+    font-size: 22px;
+    color: #00274d;
+}
+
+/* Transaction History Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 18px;
+    border: 1px solid #e0e0e0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+}
+
+td {
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e9f0ff;
+}
+
+/* Button Styling */
+button, .action-button {
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+button:hover, .action-button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.action-button {
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* Transaction Card for mobile */
+.transaction-card {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .account-summary {
+        padding: 15px;
+    }
+
+    button, .action-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* Transaction cards for smaller screens */
+    .transaction-card {
+        display: block;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .transaction-card p {
+        margin: 5px 0;
+    }
+
+    table {
+        display: none;
+    }
+}
+
