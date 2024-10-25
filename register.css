@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-container {
+    background: #f0f0f0;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(145deg, #d3d8e4, #ffffff);
+}
+
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-container label {
+    font-size: 14px;
+    color: #333;
+}
+
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    background-color: #eef6fd;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #6b9dfc, #567df4);
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #567df4, #4a90e2);
+}
+
+.registration-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 50%;
+}
+
+.registration-container::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 50%;
+}

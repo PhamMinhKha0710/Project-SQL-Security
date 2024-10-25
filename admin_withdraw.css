@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.withdraw-form .form-group {
+    margin-bottom: 15px;
+}
+
+.withdraw-form label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.withdraw-form select,
+.withdraw-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.withdraw-form select:focus,
+.withdraw-form input[type="number"]:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0066cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #004c99;
+}
+

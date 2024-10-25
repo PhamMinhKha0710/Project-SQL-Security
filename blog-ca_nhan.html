@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Cá Nhân</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1200/400') center/cover;
+            opacity: 0.1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Left Sidebar */
+        .left-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .profile-card {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--secondary-color);
+            padding: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .post {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .action-btn:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Right Sidebar */
+        .right-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .trending-posts {
+            margin-bottom: 2rem;
+        }
+
+        .trending-post {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .trending-post img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .categories {
+            margin-top: 2rem;
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--light-bg);
+            border-radius: 20px;
+            margin: 0.3rem;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-tag:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        .newsletter-form button {
+            padding: 0.5rem 1rem;
+            background: var(--secondary-color);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr 2fr;
+            }
+            .right-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .left-sidebar {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .post {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Blog Cá Nhân</h1>
+            <p>Chia sẻ những câu chuyện thú vị về cuộc sống</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Trang chủ</a></li>
+            <li><a href="#blog"><i class="fas fa-pen"></i> Blog</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> Giới thiệu</a></li>
+            <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <img src="/api/placeholder/150/150" alt="Profile Picture">
+                <h2>Tên của bạn</h2>
+                <p>Blogger | Developer | Photographer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <article class="post">
+                <div class="post-header">
+                    <img src="/api/placeholder/50/50" alt="Author">
+                    <div>
+                        <h2>Chuyến phiêu lưu đầu tiên của tôi</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 21 tháng 10, 2024</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                    </div>
+                </div>
+                <img src="/api/placeholder/800/400" alt="Post Image" class="post-image">
+                <div class="post-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="post-footer">
+                    <div class="post-actions">
+                        <span class="action-btn"><i class="far fa-heart"></i> 150</span>
+                        <span class="action-btn"><i class="far fa-comment"></i> 23</span>
+                        <span class="action-btn"><i class="far fa-share-square"></i> Chia sẻ</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-header">
+                    <img src="/api/placeholder/50/50" alt="Author">
+                    <div>
+                        <h2>Công nghệ và cuộc sống</h2>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 20 tháng 10, 2024</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                    </div>
+                </div>
+                <img src="/api/placeholder/800/400" alt="Post Image" class="post-image">
+                <div class="post-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="post-footer">
+                    <div class="post-actions">
+                        <span class="action-btn"><i class="far fa-heart"></i> 89</span>
+                        <span class="action-btn"><i class="far fa-comment"></i> 15</span>
+                        <span class="action-btn"><i class="far fa-share-square"></i> Chia sẻ</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="trending-posts">
+                <h3>Bài viết nổi bật</h3>
+                <div class="trending-post">
+                    <img src="/api/placeholder/60/60" alt="Trending">
+                    <div>
+                        <h4>10 địa điểm du lịch hot nhất 2024</h4>
+                        <small>2 ngày trước</small>
+                    </div>
+                </div>
+                <div class="trending-post">
+                    <img src="/api/placeholder/60/60" alt="Trending">
+                    <div>
+                        <h4>Bí quyết học lập trình hiệu quả</h4>
+                        <small>
